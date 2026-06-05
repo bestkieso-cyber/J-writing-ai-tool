@@ -56,6 +56,12 @@ body{
 .badge-exam{background:var(--gold-pale); color:var(--gold);}
 .badge-grade{background:rgba(255,255,255,0.1); color:#B8C5D0;}
 .header-sub{margin-left:auto; font-size:12px; color:#7A8FA0;}
+.header-credit{
+  font-size:11px; color:rgba(196,150,10,0.75);
+  letter-spacing:.04em; padding-left:1rem;
+  border-left:1px solid rgba(255,255,255,0.1);
+  white-space:nowrap;
+}
 
 /* ── Hero ── */
 .hero{
@@ -340,6 +346,7 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
     <span class="badge badge-grade">7–9年級</span>
   </div>
   <span class="header-sub">第四學習階段</span>
+  <span class="header-credit">國教中央團國語文分團輔導員　賴靜慧　設計</span>
 </header>
 
 <div class="hero">
@@ -539,11 +546,11 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
           <label class="field-label">寫作文體<span class="req">*</span></label>
           <select id="b-genre">
             <option value="">請選擇文體</option>
-            <option value="記敘文本">記敘文本</option>
-            <option value="抒情文本">抒情文本</option>
-            <option value="說明文本">說明文本</option>
-            <option value="議論文本">議論文本</option>
-            <option value="應用文本">應用文本（書信、自傳、新聞稿等）</option>
+            <option value="記敘文本">記敘文本（敘寫人事時地物）</option>
+            <option value="抒情文本">抒情文本（抒發對人事物景之情感）</option>
+            <option value="說明文本">說明文本（邏輯客觀說明事物事理）</option>
+            <option value="議論文本">議論文本（以論點論據表達看法）</option>
+            <option value="應用文本">應用文本（書信、自傳、新聞稿、演講稿等）</option>
             <option value="跨文體整合">跨文體整合（記敘抒情、說明議論等）</option>
           </select>
         </div>
@@ -643,10 +650,20 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
       <p>國中寫作的核心困難在於「審題失誤」與「立意薄弱」。這個模組針對引導式寫作題型設計課堂可用的審題鷹架、立意深化工具與分層任務。</p>
     </div>
 
+    <div class="alert alert-info" style="margin-bottom:1.25rem;">
+      <span class="alert-icon">🗝</span>
+      <div>
+        <strong>本模組的兩個操作維度</strong>——
+        <strong>審題鷹架</strong>依<strong>會考題型</strong>分類（圖表型、引文型、圖像型……），幫助學生讀懂題目的任務要求；
+        <strong>立意深化</strong>與<strong>分層任務</strong>依<strong>文體</strong>分類（記敘、議論、說明……），幫助學生完成寫作。
+        兩者分屬不同操作維度，相輔相成，可視教學需求分開或合併使用。
+      </div>
+    </div>
+
     <div class="sub-tabs">
-      <button class="sub-btn active" onclick="switchSub(this,'C','shenTi')">審題鷹架</button>
-      <button class="sub-btn" onclick="switchSub(this,'C','liYi')">立意深化</button>
-      <button class="sub-btn" onclick="switchSub(this,'C','diff')">分層任務</button>
+      <button class="sub-btn active" onclick="switchSub(this,'C','shenTi')">審題鷹架｜依題型</button>
+      <button class="sub-btn" onclick="switchSub(this,'C','liYi')">立意深化｜依文體</button>
+      <button class="sub-btn" onclick="switchSub(this,'C','diff')">分層任務｜依文體</button>
     </div>
 
     <!-- C1 審題鷹架 -->
@@ -723,10 +740,12 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
             <label class="field-label">文體<span class="req">*</span></label>
             <select id="c2-genre">
               <option value="">請選擇</option>
-              <option value="記敘抒情">記敘抒情</option>
-              <option value="說明">說明</option>
-              <option value="議論">議論</option>
-              <option value="跨文體">跨文體整合</option>
+              <option value="記敘文本">記敘文本</option>
+              <option value="抒情文本">抒情文本</option>
+              <option value="說明文本">說明文本</option>
+              <option value="議論文本">議論文本</option>
+              <option value="應用文本">應用文本</option>
+              <option value="跨文體整合">跨文體整合</option>
             </select>
           </div>
         </div>
@@ -785,10 +804,12 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
             <label class="field-label">文體<span class="req">*</span></label>
             <select id="c3-genre">
               <option value="">請選擇</option>
-              <option value="記敘抒情">記敘抒情</option>
-              <option value="說明">說明</option>
-              <option value="議論">議論</option>
-              <option value="應用文">應用文</option>
+              <option value="記敘文本">記敘文本</option>
+              <option value="抒情文本">抒情文本</option>
+              <option value="說明文本">說明文本</option>
+              <option value="議論文本">議論文本</option>
+              <option value="應用文本">應用文本</option>
+              <option value="跨文體整合">跨文體整合</option>
             </select>
           </div>
         </div>
@@ -853,12 +874,12 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
             <label class="field-label">文體<span class="req">*</span></label>
             <select id="d1-genre">
               <option value="">請選擇</option>
-              <option value="記敘文">記敘文</option>
-              <option value="抒情文">抒情文</option>
-              <option value="說明文">說明文</option>
-              <option value="議論文">議論文</option>
-              <option value="應用文">應用文</option>
-              <option value="跨文體">跨文體整合</option>
+              <option value="記敘文本">記敘文本</option>
+              <option value="抒情文本">抒情文本</option>
+              <option value="說明文本">說明文本</option>
+              <option value="議論文本">議論文本</option>
+              <option value="應用文本">應用文本</option>
+              <option value="跨文體整合">跨文體整合</option>
             </select>
           </div>
         </div>
@@ -910,11 +931,12 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
             <label class="field-label">文體<span class="req">*</span></label>
             <select id="d2-genre">
               <option value="">請選擇</option>
-              <option value="記敘文">記敘文</option>
-              <option value="抒情文">抒情文</option>
-              <option value="說明文">說明文</option>
-              <option value="議論文">議論文</option>
-              <option value="應用文">應用文</option>
+              <option value="記敘文本">記敘文本</option>
+              <option value="抒情文本">抒情文本</option>
+              <option value="說明文本">說明文本</option>
+              <option value="議論文本">議論文本</option>
+              <option value="應用文本">應用文本</option>
+              <option value="跨文體整合">跨文體整合</option>
             </select>
           </div>
         </div>
@@ -987,10 +1009,12 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
             <label class="field-label">文體<span class="req">*</span></label>
             <select id="d3-genre">
               <option value="">請選擇</option>
-              <option value="記敘文">記敘文</option>
-              <option value="議論文">議論文</option>
-              <option value="說明文">說明文</option>
-              <option value="跨文體">跨文體整合</option>
+              <option value="記敘文本">記敘文本</option>
+              <option value="抒情文本">抒情文本</option>
+              <option value="說明文本">說明文本</option>
+              <option value="議論文本">議論文本</option>
+              <option value="應用文本">應用文本</option>
+              <option value="跨文體整合">跨文體整合</option>
             </select>
           </div>
         </div>
@@ -1587,3 +1611,4 @@ ${goal?'本次核心學習目標：'+goal:''}
 </script>
 </body>
 </html>
+
