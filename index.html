@@ -335,6 +335,13 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
   font-size:12px; color:var(--ink3);
   border-top:1px solid var(--parchment3);
 }
+/* ── 貼入提醒 ── */
+.paste-reminder{
+  font-size:12px; color:var(--amber); background:var(--gold-pale);
+  border:1px solid #C4B07A; border-radius:var(--r);
+  padding:.65rem 1rem; margin-top:.75rem; line-height:1.65;
+}
+.paste-reminder strong{font-weight:600;}
 </style>
 </head>
 <body>
@@ -492,6 +499,9 @@ hr.div{border:none; border-top:1px solid var(--parchment3); margin:1.5rem 0;}
       <button class="btn-primary" onclick="genA()">⚡ 生成學情診斷指令</button>
       <button class="btn-secondary" onclick="clearMod('A')">↺ 清除重填</button>
     </div>
+    <p class="paste-reminder" id="A-paste-reminder" style="display:none">
+      💡 <strong>貼入AI平台時請記得：</strong>若你選擇的是「學生寫作樣本」，請將學生作品一併複製貼在指令之後，診斷效果會更精準。若是上傳圖片，請在圖片下方補充說明無法辨識的手寫細節。若選擇「會考題目作答情況」，建議附上學生原文或具體描述作答段落。
+    </p>
 
     <div class="prompt-output" id="A-out">
       <hr class="div">
@@ -1276,6 +1286,8 @@ ${RUBRIC_SUMMARY}
     <p class="know-warn">${d.warn}</p>
   </div>`;
   document.getElementById('A-out').scrollIntoView({behavior:'smooth',block:'start'});
+  const reminder=document.getElementById('A-paste-reminder');
+  if(reminder) reminder.style.display=(activeTab==='sample'||activeTab==='exam')?'block':'none';
 }
 
 /* ══════════════════════════════════
